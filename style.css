@@ -1,0 +1,326 @@
+/* ============================================
+   STYLE.CSS — Septian Wuling Arista
+   Dealer Resmi Wuling Tangerang Cimone
+   ============================================ */
+
+/* RESET & BASE */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a1a;background:#f8f9fa;line-height:1.6;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+
+:root{
+  --red:#D32F2F;
+  --red-dark:#b71c1c;
+  --dark:#1a1a1a;
+  --gray:#6c757d;
+  --light:#f1f3f5;
+  --white:#fff;
+  --shadow:0 4px 24px rgba(0,0,0,.08);
+  --shadow-lg:0 12px 40px rgba(0,0,0,.12);
+  --radius:16px;
+  --radius-sm:10px;
+  --transition:.3s ease;
+}
+
+/* CONTAINER */
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* ============ NAVBAR ============ */
+.navbar{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(255,255,255,.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,.06);
+  height:72px;display:flex;align-items:center;
+  transition:var(--transition);
+}
+.nav-container{display:flex;align-items:center;justify-content:space-between;width:100%}
+.logo{display:flex;align-items:center;gap:8px}
+.logo-brand{font-size:1.4rem;font-weight:900;color:var(--dark);letter-spacing:-.5px}
+.logo-badge{
+  font-size:.65rem;font-weight:700;
+  background:var(--red);color:var(--white);
+  padding:2px 8px;border-radius:4px;
+  text-transform:uppercase;letter-spacing:1px;
+}
+.nav-menu{display:flex;gap:6px}
+.nav-link{
+  padding:8px 16px;border-radius:var(--radius-sm);
+  font-size:.875rem;font-weight:500;color:var(--gray);
+  transition:var(--transition);
+}
+.nav-link:hover,.nav-link.active{color:var(--red);background:rgba(211,47,47,.08)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{width:24px;height:2.5px;background:var(--dark);border-radius:2px;transition:var(--transition)}
+
+/* ============ PAGE SYSTEM ============ */
+.page{display:none;padding-top:72px;min-height:100vh}
+.page.active{display:block;animation:fadeIn .35s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* ============ HERO ============ */
+.hero{background:linear-gradient(135deg,var(--dark) 0%,#2a2a2a 100%);color:var(--white);padding:80px 0 60px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero-badge{
+  display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;
+  background:var(--red);padding:6px 16px;border-radius:50px;margin-bottom:16px;
+}
+.hero h1{font-size:3rem;font-weight:900;line-height:1.15;margin-bottom:20px}
+.hero h1 .highlight{color:var(--red)}
+.hero p{font-size:1.1rem;color:rgba(255,255,255,.7);max-width:520px;margin-bottom:32px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-image-wrapper{
+  border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow-lg);
+}
+.hero-image-wrapper img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 28px;border-radius:var(--radius-sm);font-weight:600;font-size:.9rem;
+  cursor:pointer;border:none;transition:var(--transition);text-align:center;
+}
+.btn-primary{background:var(--red);color:var(--white)}
+.btn-primary:hover{background:var(--red-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(211,47,47,.3)}
+.btn-outline{background:transparent;border:2px solid rgba(255,255,255,.4);color:var(--white)}
+.btn-outline:hover{border-color:var(--white);background:var(--white);color:var(--dark)}
+.btn-sm{padding:10px 20px;font-size:.8rem}
+.btn-full{width:100%}
+.mr-2{margin-right:8px}
+.ml-2{margin-left:6px}
+.mt-4{margin-top:24px}
+.mt-8{margin-top:48px}
+.text-center{text-align:center}
+
+/* ============ STATS ============ */
+.stats{background:var(--white);border-bottom:1px solid #eee}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#eee}
+.stat-item{
+  padding:32px 16px;text-align:center;background:var(--white);
+  display:flex;flex-direction:column;gap:4px;
+}
+.stat-num{font-size:2rem;font-weight:900;color:var(--red)}
+.stat-label{font-size:.85rem;color:var(--gray);font-weight:500}
+
+/* ============ SECTIONS ============ */
+.section{padding:80px 0}
+.bg-gray{background:var(--light)}
+.section-header{text-align:center;margin-bottom:48px}
+.section-header h2{font-size:2rem;font-weight:800;margin-bottom:8px}
+.section-header p{color:var(--gray);font-size:1rem}
+
+/* ============ PRODUCT GRID ============ */
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.product-card{
+  background:var(--white);border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow);transition:var(--transition);border:1px solid #eee;
+}
+.product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.product-card img{width:100%;height:200px;object-fit:contain;background:#f8f9fa;padding:16px}
+.product-card .card-body{padding:20px}
+.product-card .card-badge{
+  display:inline-block;font-size:.7rem;font-weight:700;padding:3px 10px;
+  border-radius:50px;margin-bottom:8px;
+}
+.card-badge-ev{background:#d1fae5;color:#065f46}
+.card-badge-suv{background:#dbeafe;color:#1e40af}
+.card-badge-kom{background:#e5e7eb;color:#374151}
+.product-card h3{font-size:1.1rem;font-weight:700;margin-bottom:4px}
+.product-card .card-spec{font-size:.8rem;color:var(--gray);margin-bottom:12px}
+.product-card .card-price{font-size:1.25rem;font-weight:800;color:var(--red);margin-bottom:12px}
+
+/* ============ FILTER TABS ============ */
+.filter-tabs{display:flex;gap:8px;justify-content:center;margin-bottom:40px;flex-wrap:wrap}
+.filter-btn{
+  padding:10px 24px;border-radius:50px;border:1.5px solid #ddd;
+  background:var(--white);font-weight:600;font-size:.85rem;cursor:pointer;
+  transition:var(--transition);color:var(--gray);
+}
+.filter-btn:hover{border-color:var(--red);color:var(--red)}
+.filter-btn.active{background:var(--red);color:var(--white);border-color:var(--red)}
+
+/* ============ FEATURE CARDS ============ */
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.feature-card{
+  background:var(--white);padding:32px 20px;border-radius:var(--radius);
+  box-shadow:var(--shadow);text-align:center;border:1px solid #eee;
+  transition:var(--transition);
+}
+.feature-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.feature-icon{width:60px;height:60px;border-radius:50%;background:rgba(211,47,47,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.5rem;color:var(--red)}
+.feature-card h3{font-size:1rem;font-weight:700;margin-bottom:6px}
+.feature-card p{font-size:.85rem;color:var(--gray);line-height:1.5}
+
+/* ============ PROMO ============ */
+.promo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.promo-card{
+  background:var(--white);border-radius:var(--radius);padding:32px;
+  box-shadow:var(--shadow);border:1px solid #eee;position:relative;
+  transition:var(--transition);
+}
+.promo-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.promo-badge{
+  position:absolute;top:-10px;right:20px;
+  background:var(--red);color:var(--white);
+  font-size:.7rem;font-weight:800;padding:4px 14px;
+  border-radius:50px;letter-spacing:1px;
+}
+.promo-badge-green{background:#059669}
+.promo-badge-blue{background:#2563eb}
+.promo-badge-purple{background:#7c3aed}
+.promo-icon{font-size:2.2rem;color:var(--red);margin-bottom:12px}
+.promo-card h3{font-size:1.2rem;font-weight:700;margin-bottom:8px}
+.promo-desc{font-size:.85rem;color:var(--gray);margin-bottom:20px;line-height:1.6}
+
+/* ============ PAGE HERO ============ */
+.page-hero{
+  background:linear-gradient(135deg,var(--dark),#2a2a2a);
+  color:var(--white);padding:56px 0 40px;text-align:center;
+}
+.page-hero h1{font-size:2.4rem;font-weight:900;margin-bottom:8px}
+.page-hero p{color:rgba(255,255,255,.65);font-size:1.05rem}
+
+/* ============ FORM ============ */
+.form-container{max-width:700px;margin:0 auto}
+.booking-form{background:var(--white);padding:40px;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #eee}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-group{margin-bottom:16px}
+.form-row .form-group{margin-bottom:0}
+.form-group label{display:block;font-size:.8rem;font-weight:600;margin-bottom:6px;color:var(--dark)}
+.req{color:var(--red)}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;padding:12px 16px;border:1.5px solid #ddd;border-radius:var(--radius-sm);
+  font-size:.9rem;font-family:inherit;transition:var(--transition);outline:none;background:var(--white);
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(211,47,47,.12)}
+.input-display{
+  padding:12px 16px;border:1.5px solid #eee;border-radius:var(--radius-sm);
+  background:#f8f9fa;font-weight:700;color:var(--red);font-size:1rem;
+}
+
+/* RANGE SLIDER */
+input[type=range]{width:100%;height:6px;-webkit-appearance:none;appearance:none;background:#e5e7eb;border-radius:3px;outline:none;padding:0;border:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;background:var(--red);border-radius:50%;cursor:pointer;box-shadow:0 2px 8px rgba(211,47,47,.3)}
+.range-labels{display:flex;justify-content:space-between;font-size:.75rem;color:var(--gray);margin-top:4px}
+
+/* ============ KREDIT HASIL ============ */
+.kredit-hasil{margin-top:24px;background:var(--white);padding:32px;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #eee}
+.hasil-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+.hasil-item{background:var(--light);padding:16px;border-radius:var(--radius-sm);text-align:center}
+.hasil-label{display:block;font-size:.75rem;color:var(--gray);font-weight:600;margin-bottom:4px}
+.hasil-value{font-size:1.1rem;font-weight:800;color:var(--dark)}
+.angsuran-box{
+  background:linear-gradient(135deg,var(--red),var(--red-dark));
+  color:var(--white);padding:24px;border-radius:var(--radius-sm);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.angsuran-label{font-size:.9rem;font-weight:600;opacity:.9}
+.angsuran-nominal{font-size:1.8rem;font-weight:900}
+.disclaimer{font-size:.75rem;color:var(--gray);margin-top:12px;text-align:center}
+
+/* ============ TENTANG ============ */
+.tentang-grid{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:start}
+.avatar-placeholder{
+  width:200px;height:200px;border-radius:50%;
+  background:linear-gradient(135deg,var(--red),#ef4444);
+  display:flex;align-items:center;justify-content:center;
+  font-size:4rem;color:var(--white);box-shadow:var(--shadow-lg);
+}
+.tentang-text h2{font-size:1.8rem;font-weight:800;margin-bottom:4px}
+.tentang-jabatan{color:var(--red);font-weight:600;font-size:.9rem;margin-bottom:16px}
+.tentang-text p{color:var(--gray);margin-bottom:12px;line-height:1.7}
+.tentang-sosmed{display:flex;gap:12px;margin-top:20px}
+.sosmed-link{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--light);display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;color:var(--gray);transition:var(--transition);
+}
+.sosmed-link:hover{background:var(--red);color:var(--white)}
+
+/* ============ KONTAK ============ */
+.kontak-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.kontak-info{display:flex;flex-direction:column;gap:16px}
+.kontak-card{
+  display:flex;align-items:center;gap:16px;
+  background:var(--white);padding:20px;border-radius:var(--radius-sm);
+  box-shadow:var(--shadow);border:1px solid #eee;transition:var(--transition);
+}
+.kontak-card:hover{transform:translateX(4px)}
+.kontak-card i{font-size:1.5rem;color:var(--red);width:32px;text-align:center}
+.kontak-card h3{font-size:.85rem;font-weight:600;margin-bottom:2px}
+.kontak-card a{font-size:.85rem;color:var(--gray)}
+.kontak-card a:hover{color:var(--red)}
+.kontak-form-wrapper h3{font-size:1.2rem;font-weight:700;margin-bottom:16px}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--dark);color:rgba(255,255,255,.6);padding:60px 0 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1.5fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand h3{color:var(--white);font-size:1.2rem;font-weight:800;margin-bottom:4px}
+.footer-brand p{font-size:.85rem;margin-bottom:16px}
+.footer-sosmed{display:flex;gap:10px}
+.footer-sosmed a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);transition:var(--transition)}
+.footer-sosmed a:hover{background:var(--red);border-color:var(--red);color:var(--white)}
+.footer-links h4,.footer-contact h4{color:var(--white);font-size:.9rem;font-weight:700;margin-bottom:12px}
+.footer-links a,.footer-contact a{display:block;font-size:.85rem;padding:4px 0;transition:var(--transition)}
+.footer-links a:hover,.footer-contact a:hover{color:var(--white)}
+.footer-contact a i{width:20px}
+.footer-bottom{padding:20px 0;text-align:center;font-size:.8rem}
+
+/* ============ WA FLOAT ============ */
+.wa-float{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  width:56px;height:56px;border-radius:50%;
+  background:#25d366;color:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;box-shadow:0 4px 20px rgba(37,211,102,.4);
+  transition:var(--transition);animation:pulse 2s infinite;
+}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(37,211,102,.5)}
+@keyframes pulse{0%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 30px rgba(37,211,102,.6)}100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1024px){
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+  .feature-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .hero h1{font-size:2.2rem}
+  .hero-image-wrapper{order:-1}
+  .product-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}
+  .promo-grid{grid-template-columns:1fr}
+  .feature-grid{grid-template-columns:1fr;max-width:380px;margin:0 auto}
+  .tentang-grid{grid-template-columns:1fr;text-align:center}
+  .avatar-placeholder{margin:0 auto}
+  .tentang-sosmed{justify-content:center}
+  .kontak-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .hasil-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr;gap:24px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat-item{padding:20px 12px}
+  .stat-num{font-size:1.6rem}
+
+  /* Hamburger */
+  .hamburger{display:flex}
+  .nav-menu{
+    display:none;position:fixed;top:72px;left:0;right:0;
+    background:var(--white);flex-direction:column;padding:16px;
+    box-shadow:0 12px 24px rgba(0,0,0,.1);gap:4px;
+  }
+  .nav-menu.open{display:flex}
+  .page-hero h1{font-size:1.8rem}
+  .angsuran-box{flex-direction:column;gap:8px;text-align:center}
+  .angsuran-nominal{font-size:1.4rem}
+}
+@media(max-width:480px){
+  .hero h1{font-size:1.8rem}
+  .section{padding:48px 0}
+  .section-header h2{font-size:1.5rem}
+  .booking-form{padding:24px 16px}
+  .page-hero{padding:40px 0 28px}
+}
